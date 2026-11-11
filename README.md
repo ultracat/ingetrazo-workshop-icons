@@ -30,6 +30,39 @@ In guide mode, the Tape Measure and the Protractor show a small «+».
 
 ## Install
 
+### The easy way: one command
+
+Close IngeTrazo, then run one of these.
+
+macOS / Linux:
+
+```
+curl -fsSL https://raw.githubusercontent.com/ultracat/ingetrazo-workshop-icons/main/install.py | python3 -
+```
+
+Windows: download [`install.py`](install.py) and run `py install.py`.
+From a copy of this repository: `python3 install.py`.
+
+The script:
+
+- finds IngeTrazo's per-user folder, as IngeTrazo does
+- offers to install the Custom Icons extension if it is missing. It installs
+  version 1.1 from its author's repository, checked against the SHA-256 in
+  IngeTrazo's extension catalogue
+- copies `Workshop Color` into the extension's themes, replacing an older copy
+  of it and leaving other themes alone
+- makes it the theme in use. The previous `settings.json` is kept as
+  `settings.json.bak`
+
+Then start IngeTrazo. The script uses only Python's standard library.
+
+| Option | What it does |
+|---|---|
+| `--yes` | Answers yes to every question, e.g. installing the extension: `… \| python3 - --yes` |
+| `--uninstall` | Removes the theme and goes back to IngeTrazo's own icons |
+
+### By hand
+
 1. Install the [Custom Icons](https://github.com/APBureauEtude/ingetrazo-custom-icons)
    extension (version 1.1 or later) and start IngeTrazo once.
 2. Copy the `Workshop Color` folder into the extension's `Icônes custom`
